@@ -7,6 +7,7 @@ var inofObj = {
     "language": userLang,
     "software": userSW
 };
+app.enable('trust proxy');
 app.set('port', (process.env.PORT || 5000))
 app.get('/',function(req,res){
     userIp = req.headers['x-forwarded-for'];
