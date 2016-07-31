@@ -7,6 +7,7 @@ var inofObj = {
     "language": userLang,
     "software": userSW
 };
+app.set('port', (process.env.PORT || 5000))
 app.get('/',function(req,res){
     userIp = req.headers['x-forwarded-for'];
     userLang = req.headers["accept-language"];
@@ -20,4 +21,4 @@ app.get('/',function(req,res){
     res.send(inofObj);
 });
 
-app.listen(process.env.PORT,process.env.IP);
+app.listen(app.get('port'));
